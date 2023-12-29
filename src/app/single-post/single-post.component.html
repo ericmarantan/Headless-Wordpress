@@ -1,0 +1,45 @@
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 1)"
+  template="<img src='https://media.giphy.com/media/o8igknyuKs6aY/giphy.gif' />"
+>
+</ngx-spinner>
+<div style="text-align: center;">
+    <a href="/">Home</a> 
+</div>
+
+<div id="layout" class="pure-g">
+    <div class="content pure-u-l pure-u-md-3-4">
+        <div>
+            <!-- A wrapper for all the blog posts-->
+            <div class="posts">
+                <h1 class="content-subhead">Blog Posts</h1>
+                <span style="color: red;">{{errorMessage}}</span>
+                <!--A single blogpost-->
+                <section class="posts" *ngIf="singlePosts">
+                    <header class="post-header">
+                        <h2 class="post-title" [innerHtml]="singlePosts.title.rendered"></h2>
+                        <p class="post-meta">
+                            By <a href="#" target="_blank" class="post-author">Eric</a> 
+                            | <a href="#">{{singlePosts.date | date: 'shortDate'}}</a>
+                        </p>
+                    </header>
+
+                    <div class="post-description">
+                        <p [innerHtml]="singlePosts.content.rendered"></p>
+                        
+
+                    </div>
+                </section>
+            </div>
+
+            <div class="footer">
+                <div class="pure-menu pure-menu-horizontal">
+                    <div class="pure-menu-item">
+                        <a href="#" class="pure-menu-link">Twitter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
